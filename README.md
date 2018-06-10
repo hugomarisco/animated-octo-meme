@@ -38,18 +38,23 @@ Using a schema like this:
   {
     "revisionId": <Integer>,
     "diffs": {
-      <fileName|String>: [
-        "linesRemoved": [<lineNo|Integer>,],
-        "linesCreated": [<lineNo|Integer>,]
+      [fileName <String>]: [
+        "linesRemoved": [[lineNo <Integer>],],
+        "linesCreated": [{
+          lineNo: <Integer>,
+          content: <String>
+        },]
       ]
     }
   }
 ]
 ```
 
+This schema can be encoded a more compact format (rather than JSON) to further reduce the amount of disk space needed to store deltas.
+
 It's importante to notice that we're using lines as the atoms of our diff system.
 
-To improve the performance we can also store full-snapshots every X revisions (so we don't have to apply hundreds or thousands of diff sets to restore an old revision)
+To improve the performance we can also store full-snapshots every X revisions (so we don't have to apply hundreds or thousands of diff sets to restore an old revision).
 
 ## 3. Node.js REST API
 
