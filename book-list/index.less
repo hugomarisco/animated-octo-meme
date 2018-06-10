@@ -1,0 +1,186 @@
+@gray: #9b9b9b;
+@light-gray: #d9d9d9;
+@light-beige: #faf9f7;
+@black: #2a2a2a;
+@green: #BCD187;
+
+@title-width: 40%;
+@year-width: 20%;
+@rating-width: 20%;
+@links-width: 20%;
+
+@serif-font: Georgia, Times, 'Times New Roman', serif;
+@sans-serif-font: "Lato", sans-serif;
+
+body {
+  background: #f5f1ed;
+  padding: 10px;
+  font-family: @sans-serif-font;
+  color: @black;
+}
+
+a {
+  color: @green;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+.panel {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__heading {
+    margin: 15px;
+  }
+}
+
+.book_list {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    color: @gray;
+    font-weight: normal;
+    text-align: center;
+
+    &--title {
+      text-align: left;
+      width: @title-width;
+    }
+
+    &--year {
+      width: @year-width;
+    }
+
+    &--rating {
+      width: @rating-width;
+    }
+
+    &--links {
+      width: @links-width;
+    }
+  }
+
+  &__book {
+    &--odd {
+      display: block;
+      background: @light-beige;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+  }
+}
+
+.book {
+  padding: 10px 15px;
+  cursor: pointer;
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info {
+    display: flex;
+    align-content: flex-start;
+    width: @title-width;
+  }
+
+  &__image {
+    width: 70px;
+    padding-right: 15px;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    img {
+      border-radius: 5px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__authors {
+    color: @gray;
+    font-weight: lighter;
+  }
+
+  &__year {
+    width: @year-width;
+    text-align: center;
+    font-family: @serif-font;
+  }
+
+  &__rating {
+    width: @rating-width;
+    text-align: center;
+    font-family: @serif-font;
+  }
+
+  &__links {
+    width: @links-width;
+    text-align: center;
+
+    .links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      &__link {
+        padding: 3px 0;
+      }
+    }
+  }
+
+  &__description {
+    text-align: justify;
+    line-height: 1.5em;
+  }
+}
+
+.pagination {
+  list-style-type: none;
+  
+  &__control {
+    display: inline-block;
+
+    &--prev, &--next {
+      button {
+        cursor: pointer;
+        border: none;
+        color: @gray;
+        font-size: 1.5em;
+
+        &:disabled {
+          cursor: default;
+          color: @light-gray;
+        }
+      }
+
+      margin: 0 10px;
+    }
+  }
+}

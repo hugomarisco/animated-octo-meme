@@ -1,0 +1,29 @@
+<div class="book" ng-click="$ctrl.toggleDescription()">
+  <div class="book__main">
+    <div class="book__info">
+      <div class="book__image">
+        <img ng-src="{{ $ctrl.image }}" alt="{{ $ctrl.title }}">
+      </div>
+      <div class="book__id">
+        <h2 class="book__title">{{ $ctrl.title }}</h2>
+        <p class="book__authors">{{ $ctrl.authors.join(',') }}</p>
+      </div>
+    </div>
+    <div class="book__year">
+      <p>{{ $ctrl.year }}</p>
+    </div>
+    <div class="book__rating">
+      <p>{{ $ctrl.rating }}/10</p>
+    </div>
+    <div class="book__links">
+      <ul class="links">
+        <li class="links__link" ng-repeat="buyInfo in $ctrl.links" >
+          <a ng-href="{{ buyInfo.link }}" href="">{{ buyInfo.store }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="book__description" ng-if="$ctrl.showingDescription">
+    <p>{{ $ctrl.description }}</p>
+  </div>
+</div>

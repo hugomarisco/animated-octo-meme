@@ -1,0 +1,1 @@
+declare module "*.json" { const template: any; export default template; }

@@ -1,0 +1,37 @@
+<div class="panel">
+  <h1 class="panel__heading">Most popular Books of All time</h1>
+
+  <div class="book_list">
+    <div class="book_list__header">
+      <h2 class="book_list__heading book_list__heading--title">Title</h2>
+      <h2 class="book_list__heading book_list__heading--year">Published</h2>
+      <h2 class="book_list__heading book_list__heading--rating">Rating</h2>
+      <h2 class="book_list__heading book_list__heading--links">Buy On</h2>
+    </div>
+
+    <div class="book_list__body">
+      <book
+        ng-repeat="book in $ctrl.books | limitTo : 5 : ($ctrl.currentPage - 1) * 5"
+        ng-class-odd="'book_list__book--odd'"
+        title="book.title"
+        image="book.image"
+        authors="book.authors"
+        year="book.year"
+        rating="book.rating"
+        description="book.description"
+        links="book.links"
+      ></book>
+    </div>
+
+    <div class="book_list__footer">
+      <pagination
+        class="book_list__pagination"
+        current-page="$ctrl.currentPage"
+        records-per-page="5"
+        total-records="$ctrl.books.length"
+      ></pagination>
+    </div>
+  </div>
+
+  
+</div>

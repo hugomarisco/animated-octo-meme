@@ -1,0 +1,11 @@
+<ul class="pagination">
+  <li class="pagination__control pagination__control--prev">
+    <button ng-disabled="!$ctrl.canPrev()" href="#" ng-click="$ctrl.prev()">&lt;</button>
+  </li>
+  <li class="pagination__control">
+    <p>Page {{ $ctrl.currentPage }} of {{ $ctrl.totalPages() }}</p>
+  </li>
+  <li class="pagination__control pagination__control--next">
+    <button ng-disabled="!$ctrl.canNext()" href="#" ng-click="$ctrl.next()">&gt;</button>
+  </li>
+</ul>
